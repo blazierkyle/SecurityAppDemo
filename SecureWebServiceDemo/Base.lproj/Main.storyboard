@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SecureWebServiceDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,83 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a URL..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9JJ-LQ-8eY">
+                                <rect key="frame" x="16" y="143" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="URL of Web Service:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FRZ-Zx-tHU">
+                                <rect key="frame" x="16" y="114" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="JfU-EC-yzY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Secure Web Service Demo 1: Square a Number" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B1k-6l-gUA">
+                                <rect key="frame" x="16" y="28" width="343" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="owd-Us-301"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value Returned From Web Service" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0fU-Bb-GvY">
+                                <rect key="frame" x="16" y="237" width="343" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Submit the above form to see the value returned by the web service" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="wAc-Ma-ZIO">
+                                <rect key="frame" x="16" y="263" width="343" height="396"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mmf-6M-WoP">
+                                <rect key="frame" x="153" y="189" width="69" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="69" id="7eu-Ea-PfA"/>
+                                    <constraint firstAttribute="height" constant="30" id="YOh-VM-xTp"/>
+                                </constraints>
+                                <state key="normal" title="Submit"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wAc-Ma-ZIO" firstAttribute="top" secondItem="0fU-Bb-GvY" secondAttribute="bottom" constant="8" id="3FN-dc-Xud"/>
+                            <constraint firstItem="9JJ-LQ-8eY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Exl-Ir-GlR"/>
+                            <constraint firstItem="FRZ-Zx-tHU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="JwB-CS-WQN"/>
+                            <constraint firstItem="B1k-6l-gUA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="OgA-zG-25E"/>
+                            <constraint firstItem="0fU-Bb-GvY" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="OiX-eX-07J"/>
+                            <constraint firstItem="FRZ-Zx-tHU" firstAttribute="top" secondItem="B1k-6l-gUA" secondAttribute="bottom" constant="39" id="QC1-Xh-ifO"/>
+                            <constraint firstItem="0fU-Bb-GvY" firstAttribute="top" secondItem="Mmf-6M-WoP" secondAttribute="bottom" constant="18" id="RjM-yZ-kQl"/>
+                            <constraint firstItem="wAc-Ma-ZIO" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="SC6-Nj-dtj"/>
+                            <constraint firstItem="0fU-Bb-GvY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="ZnP-Ww-6zd"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="wAc-Ma-ZIO" secondAttribute="bottom" constant="8" id="bvw-Qd-5CY"/>
+                            <constraint firstItem="FRZ-Zx-tHU" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="el2-eT-ib0"/>
+                            <constraint firstItem="Mmf-6M-WoP" firstAttribute="top" secondItem="9JJ-LQ-8eY" secondAttribute="bottom" constant="16" id="fMN-OK-qUr"/>
+                            <constraint firstItem="Mmf-6M-WoP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mxK-JW-ZEz"/>
+                            <constraint firstItem="9JJ-LQ-8eY" firstAttribute="top" secondItem="FRZ-Zx-tHU" secondAttribute="bottom" constant="8" id="reA-t6-ush"/>
+                            <constraint firstItem="9JJ-LQ-8eY" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="uW7-YU-seR"/>
+                            <constraint firstItem="wAc-Ma-ZIO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="wxj-bN-w55"/>
+                            <constraint firstItem="B1k-6l-gUA" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="xsS-Ct-1iV"/>
+                            <constraint firstItem="B1k-6l-gUA" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="yBe-46-cZp"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="returnValueTextView" destination="wAc-Ma-ZIO" id="lD4-bJ-gn9"/>
+                        <outlet property="submitButton" destination="Mmf-6M-WoP" id="8cF-CO-Wwr"/>
+                        <outlet property="urlTextField" destination="9JJ-LQ-8eY" id="cyv-cq-llS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
     </scenes>
 </document>
