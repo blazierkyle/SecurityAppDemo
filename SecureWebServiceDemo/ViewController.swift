@@ -47,6 +47,10 @@ class ViewController: UIViewController {
             return
         }
         
+        DispatchQueue.main.async(execute: {
+            self.returnValueTextView.text = "Making the HTTP request now..."
+        })
+        
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             
             if let error = error {
@@ -83,6 +87,18 @@ class ViewController: UIViewController {
                     DispatchQueue.main.async(execute: {
                         self.returnValueTextView.text = "\(json)"
                     })
+                } else {
+                    // Couldn't convert to dictionary - try converting to a String
+                    if let str = NSString(data: data, encoding: String.Encoding.utf8.rawValue) {
+                        DispatchQueue.main.async(execute: {
+                            self.returnValueTextView.text = "\(str)"
+                        })
+                    } else {
+                        // Error
+                        DispatchQueue.main.async(execute: {
+                            self.returnValueTextView.text = "Encountered an error converting the data to a dictionary or string."
+                        })
+                    }
                 }
                 
             } catch let error {
