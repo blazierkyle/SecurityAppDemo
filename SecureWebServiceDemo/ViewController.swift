@@ -102,9 +102,17 @@ class ViewController: UIViewController {
                 }
                 
             } catch let error {
-                DispatchQueue.main.async(execute: {
-                    self.returnValueTextView.text = error.localizedDescription
-                })
+                
+                if let str = NSString(data: data, encoding: String.Encoding.utf8.rawValue) {
+                    DispatchQueue.main.async(execute: {
+                        self.returnValueTextView.text = "\(str)"
+                    })
+                } else {
+                    // Error
+                    DispatchQueue.main.async(execute: {
+                        self.returnValueTextView.text = error.localizedDescription
+                    })
+                }
             }
             
         }
